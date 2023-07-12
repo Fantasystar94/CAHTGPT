@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<input type="text" id="txt1">
+<input type="text" id="txt2">
+<button type="button" onclick="fieldInputAdd.clickFunction()" style="width:200px;height:50px"></button>
+</body>
+<script>
+//문제2
+//두 개의 입력 필드에 숫자를 입력받고, 
+//버튼을 클릭하면 두 숫자를 더한 결과를 출력하는 JavaScript 함수를 작성하세요.
+//또한, 입력값이 유효한지 (숫자인지) 검사하여 유효하지 않은 경우에는 오류 메시지를 출력하세요.
+
+const fieldInputAdd = {
+    clickFunction:()=>{
+    let value1 = Number(document.querySelector('#txt1').value);
+    let value2 = Number(document.querySelector('#txt2').value);
+    let result = value1+value2;
+    console.log(result==NaN)
+    if(result===NaN){
+        alert('숫자만 입력해주세요');
+    }
+    }
+
+}
+</script>
+</html>

@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+</body>
+<script>
+//문제1
+//주어진 문자열에서 모든 단어의 첫 글자를 대문자로 변환하는 함수를 작성하세요.
+
+capitalizeWords=(파라미터)=>{
+   const splitWord= 파라미터.split(' ');
+    splitWord.forEach(element => {
+        const returnWords = [...element][0].toUpperCase();
+        let newWords ='';
+        newWords+=returnWords;
+        newWords+=[...element];  
+        return newWords;
+    });
+}
+console.log(capitalizeWords("hello world")); // 출력: "Hello World"
+</script>
+</html>

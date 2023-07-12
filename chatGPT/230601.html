@@ -1,0 +1,74 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+</body>
+<script>
+//문제1
+//문제: 주어진 문자열에서 중복된 문자를 제외하고, 각 문자의 등장 횟수를 객체로 반환하는 함수를 작성하세요.
+//예시:
+//입력: "abracadabra"
+//출력: { a: 5, b: 2, r: 2, c: 1, d: 1 }
+exceptDuplicateReturnObj=(e)=>{
+let arr = [...e];
+let newObj ={};
+
+arr.forEach((char)=>{
+    if(newObj[char]){
+        newObj[char]++
+    }
+    else{
+        newObj[char]=1;
+    }
+});
+return newObj
+}
+console.log(exceptDuplicateReturnObj('abracadabra'));
+
+//문제2: 
+//주어진 배열에서 홀수와 짝수를 분류하여 두 개의 배열로 반환하는 함수를 작성하세요. 홀수는 첫 번째 배열에, 짝수는 두 번째 배열에 포함되어야 합니다.
+//입력: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+//출력: [[1, 3, 5, 7, 9], [2, 4, 6, 8, 10]]
+
+
+evenDivide=(e)=>{
+    let evenArr= [];
+    let oddArr=[];
+    let assembleArr =[];
+    e.forEach((char)=>{
+        if(char%2===0){
+            evenArr.push(char);
+        }
+        else{
+            oddArr.push(char);
+        }
+    })
+    assembleArr.push(evenArr,oddArr);
+    return assembleArr;
+}
+
+console.log(evenDivide([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
+
+
+//문제3: 
+//주어진 문자열에서 모든 단어를 역순으로 뒤집어 새로운 문자열로 반환하는 함수를 작성하세요. 단어는 공백으로 구분되어야 합니다.
+//입력: "Hello, World!"
+//출력: "olleH ,dlroW!"
+
+reverseStringSplit=(e)=>{
+    const str = e.split(' ');
+    let newStr='';
+    let newArr =[];
+    str.forEach((char,index)=>{
+        let reversing = [...char].reverse().join('');
+        newStr+=reversing+' ';
+    })
+    return newStr.trim();
+}
+console.log(reverseStringSplit("Hello, World!"));
+</script>
+</html>
